@@ -1,0 +1,179 @@
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.ipc-icon {
+	vertical-align: middle;
+}
+
+.ipc-icon--inline {
+	height: 1em;
+	vertical-align: baseline;
+	width: 1em;
+}
+
+.ipc-tabs {
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-size: .875rem;
+	line-height: 1.375rem;
+	font-weight: 500;
+	letter-spacing: .00714em;
+	text-decoration: inherit;
+	text-transform: inherit;
+	-webkit-font-smoothing: auto;
+	font-smooth: auto;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0;
+	position: relative;
+	scroll-behavior: smooth;
+	width: 100%;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.ipc-tabs::-webkit-scrollbar {
+	display: none;
+}
+
+.ipc-tab {
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	height: 48px;
+	justify-content: center;
+	list-style: none;
+	min-width: 90px;
+	outline: 0;
+	padding: 0 24px;
+	text-transform: none;
+	transition: all 0.15s, font-weight 0;
+	user-select: none;
+	white-space: nowrap;
+}
+
+.ipc-tab.ipc-tab--active {
+	font-weight: 600;
+}
+
+.ipc-tab.ipc-tab--active:before {
+	opacity: 1;
+}
+
+.ipc-tabs__indicator {
+	position: absolute;
+	bottom: 0;
+	height: 3px;
+	transition: all 0.25s ease-out;
+}
+
+.ipc-tab-arrow {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 1;
+	display: none;
+	font-size: 1rem;
+}
+
+.ipc-tab-arrow.ipc-tab-arrow--right {
+	right: 0;
+	padding-left: 1rem;
+}
+
+.ipc-tab-arrow.ipc-tab-arrow--left {
+	left: 0;
+	padding-right: 1rem;
+}
+
+.ipc-tabs--align-left {
+	justify-content: flex-start;
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab:hover {
+	background-color: rgba(255, 255, 255, 0.08);
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab:active {
+	background-color: rgba(255, 255, 255, 0.32);
+}
+
+.ipc-tabs--on-baseAlt .ipc-tabs__indicator {
+	background: #f5c518;
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab-arrow {
+	color: #fff;
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab-arrow:hover {
+	color: #f5c518;
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab-arrow--right {
+	background: linear-gradient(to right, transparent 0%, #121212 50%);
+}
+
+@media screen and (min-width: 600px) {
+	.ipc-tabs--on-baseAlt .ipc-tab-arrow--right {
+		background: linear-gradient(to right, transparent 0%, #000 50%);
+	}
+}
+
+.ipc-tabs--on-baseAlt .ipc-tab-arrow--left {
+	background: linear-gradient(to left, transparent 0%, #121212 50%);
+}
+
+@media screen and (min-width: 600px) {
+	.ipc-tabs--on-baseAlt .ipc-tab-arrow--left {
+		background: linear-gradient(to left, transparent 0%, #000 50%);
+	}
+}
+
+
+/*! CSS Used from: Embedded */
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+div,
+span,
+ul,
+li {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ul {
+	list-style: none;
+}
+
+.iWtFda {
+	margin-bottom: 1rem;
+}
