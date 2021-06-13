@@ -280,7 +280,7 @@
 			data.genres.forEach(genre=>genres.tvs[genre.id] = genre.name)
 		});
 
-		$( document ).ready(() => {
+		$( document ).ready(setTimeout(() => {
             $.get('https://api.themoviedb.org/3/movie/upcoming?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data=>{
                 let html = ejs.render(`
 					<% results.slice(0, 5).forEach(function(movie){ %>
@@ -471,7 +471,7 @@
                 });
             }
             )
-		});
+		}, 100));
 		</script>
         <style>
             input#copy {
@@ -547,7 +547,7 @@
                                         <div class="spotlight swiper-container">
                                             <div style="display: flex; margin-bottom: 40px" class="swiper-wrapper n2-ss-slider n2-ss-loaded" id="n2-ss-285">
                                                 <script>
-												$( document ).ready(() => {
+												$( document ).ready(setTimeout(() => {
                                                     $.get('https://api.themoviedb.org/3/movie/popular?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data=>{
                                                         let html = ejs.render(`
 														<% results.slice(0, 10).forEach(function(movie){ %>
@@ -683,7 +683,7 @@
                                                         });
                                                     }
                                                     );
-												});
+												}, 100));
 												</script>
                                             </div>
                                             <!-- Add Pagination -->
