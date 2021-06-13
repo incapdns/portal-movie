@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<noscript id="aonoscrcss">
+		<link media="all" href="css/noscript.css" rel="stylesheet" />
+	</noscript>
+
+	<title>PortalMovie - Veja especificações de filmes !</title>
+	<meta name="description" content="Leia reviews, trailer, tenha acesso aos filmes em lançamento e muito mais !" />
+	<link rel="canonical" href="https://localhost/" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="PortalMovie - Veja especificações de filmes !" />
+	<meta property="og:description"
+		content="Leia reviews, trailer, tenha acesso aos filmes em lançamento e muito mais !" />
+	<meta property="og:url" content="https://localhost/" />
+	<meta property="og:site_name" content="PortalMovie" />
+	<meta property="publisher" content="https://www.facebook.com/PortalMovie" />
+	<meta property="og:image" content="https://localhost/images/portal_movies.jpg" />
+	<meta property="og:image:width" content="2480" />
+	<meta property="og:image:height" content="3508" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@PortalMovie" />
+	<meta name="twitter:site" content="@PortalMovie" />
+	<script src="https://www.youtube.com/player_api"></script>
+	<script type="application/ld+json" class="yoast-schema-graph">
+				{
+					"@context":"https://schema.org",
+					"@graph":[
+					{
+						"@type":"WebSite",
+						"@id":"https://localhost/#website",
+						"url":"https://localhost/",
+						"name":"PortalMovie",
+						"description":"",
+						"potentialAction":[
+							{
+								"@type":"SearchAction",
+								"target":"https://localhost/?st=!{search_term_string}",
+								"query-input":"required name=search_term_string"
+							}
+						],
+						"inLanguage":"pt-BR"
+					},
+					{
+						"@type":"ImageObject",
+						"@id":"https://localhost/#primaryimage",
+						"inLanguage":"en-US",
+						"url":"https://localhost/images/portal_movies.jpg",
+						"contentUrl":"https://localhost/images/portal_movies.jpg",
+						"width":2480,
+						"height":3508
+					},
+					{
+						"@type":"WebPage",
+						"@id":"https://localhost/",
+						"url":"https://localhost/",
+						"name":"PortalMovie - Veja especificações de filmes !",
+						"isPartOf":{
+							"@id":"https://localhost/#website"
+						},
+						"primaryImageOfPage":{
+							"@id":"https://localhost/#primaryimage"
+						},
+						"datePublished":"2021-04-03T19:55:28+00:00",
+						"dateModified":"2021-04-01T08:53:16+00:00",
+						"author":{
+							"@id":"https://www.facebook.com/PortalMovie"
+						},
+						"description":"Leia reviews, trailer, tenha acesso aos filmes em lançamento e muito mais !",
+						"inLanguage":"pt-BR",
+						"potentialAction":[
+							{
+								"@type":"ReadAction",
+								"target":[
+								"https://localhost"
+								]
+							}
+						]
+					},
+					{
+						"@type":"Person",
+						"@id":"https://localhost/#person",
+						"name":"Ngan Tengyuen",
+						"sameAs":[
+							"https://www.facebook.com/PortalMovie"
+						]
+					}
+					]
+				}
+			</script>
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/axios.min.js"></script>
+	<script src="js/lib/jsonp.js"></script>
+	<script src="js/lib/ejs.min.js"></script>
+
+	<script src="js/lib/nav.js"></script>
+	<link rel="stylesheet" href="css/nav.css" />
+	<script src="js/lib/list.js"></script>
+
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/search.css" />
+
+	<link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+	<script src="js/lib/swiper-bundle.min.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<script src="js/lib/bootstrap.min.js"></script>
+
+	<style>
+		.swiper-container {
+			width: 100%;
+		}
+	</style>
+
+	<link rel="stylesheet" href="css/modal.css" />
+	<link rel="stylesheet" href="css/container.css" />
+	<link rel="stylesheet" href="css/content.css" />
+	<link rel="stylesheet" href="css/separator.css" />
+	<link rel="stylesheet" href="css/spotlight.css" />
+	<link rel="stylesheet" href="css/news.css" />
+
+	<link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>Fechar</span>
+						<span aria-hidden="true">×</span>
+					</button>
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+							allow="autoplay"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <input id="copy" type="text" value="" />
+
+	<header id="pm-nav" class="pm-nav">
+		<div class="pm-nav-container pm-nav-reol">
+			<a href="index.html" class="pm-nav-logo" id="pm-nav-logo">
+				<div class="pm-brand-logo"></div>
+			</a>
+			<div class="pm-nav-primary-components">
+				<div id="pm-nav-main-menu" class="pm-nav-main-menu">
+					<ul style=" text-align: center; float: none;" role="navigation">
+						<li>
+							<a style="font-size: 22px;" id="pm-nav-home" class="pm-highlighted">VER FILME</a>
+						</li>
+					</ul>
+				</div>
+				<div class="pm-nav-search">
+					<label onclick="history.back();" style="font-weight: bold; font-size: 18px;top: 5px; position: relative;">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        Voltar
+                    </label>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="movie-info" style="padding-top: 1.5rem;padding-bottom: 1.5rem; background: black;">
+		<hgroup class="ipc-title ipc-title--category-title ipc-title--baseAlt ipc-title--on-accent1 hgroup">
+			<h3 class="ipc-title__text">Informações</h3>
+		</hgroup>
+	</div>
+
+	<!-- Swiper -->
+	<div class="movie-info swiper-container">
+		<div class="swiper-wrapper" id="ejs-t-movie">
+
+		</div>
+		<!-- Add Arrows -->
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+	<!-- Initialize Swiper -->
+	<script>
+		let getStar = function (star) {
+			star = star.toString().split('.');
+			return star[0] + ',' + (star[1] || 0);
+		}
+
+		let getYear = function (date) {
+			return date.split('-')[0];
+		}
+
+		var months = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+		let getMonth = function (date) {
+			let month = date.split('-')[1];
+			month = parseInt(month) - 1;
+			return months[month];
+		}
+
+		var bmonths = ["Jan", "Fev", "Mar", "Abril", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+		let getDate = function (date) {
+			let month = date.split('-')[1];
+			let day = date.split('-')[2];
+			month = parseInt(month) - 1;
+			month = bmonths[month];
+
+			let year = date.split('-')[0];
+			return month + ' ' + day + ', ' + year;
+		}
+
+        let getDay = function (date){
+            return date.split('-')[2];
+        }
+
+		let genres = {
+			movies: {},
+			tvs: {}
+		};
+
+		$.get('https://api.themoviedb.org/3/genre/movie/list?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data => {
+			data.genres.forEach(genre => genres.movies[genre.id] = genre.name)
+		})
+
+		$.get('https://api.themoviedb.org/3/genre/tv/list?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data => {
+			data.genres.forEach(genre => genres.tvs[genre.id] = genre.name)
+		})
+
+        let id = location.href.split('#')[1];
+        id = id.replace(/\D/g,'');
+
+		$.get('https://api.themoviedb.org/3/movie/'+id+'?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data => {
+			let html = ejs.render(`
+					<% results.slice(0, 1).forEach(function(movie){ %>
+						<div class="swiper-slide">
+								<div class="_3KHiTg _1472H- av-dp-container _1WCtm8 Gzzp8d">
+									<div class="fVWsBr Coi_ha av-hero-background" data-automation-id="hero-background">
+										<div class="_3hF9WT">
+											<div class="_3AGscX _2ZnCkI">
+												<img id="atf-thumb" class="_3Ey1L9" src="https://image.tmdb.org/t/p/original/<%= movie.backdrop_path %>">
+												<img id="atf-full" class="Zk8aEm _2ZnCkI" src="https://image.tmdb.org/t/p/original/<%= movie.backdrop_path %>" alt="">
+											</div>
+											<div class="_3Lykuc"></div>
+											<div class="_33xhZL"></div>
+										</div>
+									</div>
+									<div class="av-detail-section _1nIHVe">
+										<div class="_2hu-aV">
+											<h1 class="redirect _2IIDsE _3I-nQy" data-id="<%= movie.id %>"><%= movie.title %></h1>
+											<div class="_3QwtCH _16AW_S _2LF_6p dv-node-dp-badges _3vxMzE HaWow5">
+												<span class="FDDgZI">
+													<img style="margin-right: 4px;" src="images/icons/imdb.svg">
+													
+													<span><%= getStar(movie.vote_average) %> Pts</span>
+												</span>
+												<span class="XqYSS8">
+													<span> <%= getDay(movie.release_date) %> de <%= getMonth(movie.release_date) %> </span>
+												</span>
+												<span class="XqYSS8">
+													<span> <%= getYear(movie.release_date) %> </span>
+												</span>
+												<span class="i4xv9t">
+													<span>X-Ray</span>
+												</span>
+												<% if(movie.adult) { %>
+													<span class="_1zslxR _9VzAtc" dir="ltr">
+														<span class="EyZ6mf _2ikzy6 _2Qs3kC">18</span>
+													</span>
+												<% } %>
+												<span>
+													<span class="Gpyvwj _3lV8u4 _3y6hZ6"></span>
+												</span>
+											</div>
+											<div class="_2IIDsE dv-dp-node-synopsis" data-automation-id="atf-synopsis">
+												<div class="_1XdgZK">
+												<div class="_2IIDsE _3fuIyl" data-automation-id="atfSynopsisExpander">
+													<div class="mlmPSf -dmR1h f11d1lkh">
+														<input type="checkbox" id="atfSynopsisExpander" class="wgGFDs" disabled=""><label for="atfSynopsisExpander" class="_1W5VSv"></label>
+														<div class="_3qsVvm _1wxob_">
+															<div class="desc-auto">
+																<%= movie.overview %>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											<div class="_3u-3mI dv-dp-node-meta-info _2IIDsE">
+												<div class="_2IIDsE _30UT8H" id="meta-info" data-automation-id="meta-info">
+												<div class="_266mZB">
+													<dl>
+														<dt><span class="_36qUej">Diretores</span></dt>
+														<dd><a class="_1NNx6V">Nao tem na API</a></dd>
+													</dl>
+													<dl>
+														<dt>
+															<span class="_36qUej">Atores principais</span>
+														</dt>
+
+														<dd>
+															<a class="_1NNx6V">Nao tem na API</a>
+														</dd>
+													</dl>
+													<dl>
+														<dt><span class="_36qUej">Gêneros</span></dt>
+														<dd>
+															<% movie.genres.forEach(function(genre){ %>
+																<a class="_1NNx6V"><%= genre.name %></a>
+																<% if(genre !== movie.genres.slice(-1)[0]) { %>
+																	<span style="position: relative; right: 4px;">
+																		<span class="_36qUej">, </span>
+																	</span>
+																<% } %>
+															<% }); %>
+														</dd>
+													</dl>
+													<dl class="_2y5Q0c">
+														<dt><span class="_36qUej">Legendas</span></dt>
+														<dd>Português</dd>
+													</dl>
+													<dl class="_2y5Q0c">
+														<dt><span class="_36qUej">Idiomas de áudio</span></dt>
+														<dd>Português<span aria-hidden="true"><span class="_36qUej">, </span></span>English</dd>
+													</dl>
+												</div>
+												</div>
+											</div>
+											<div id="dv-action-box-wrapper" class="_2IIDsE">
+												<div id="dv-action-box" class="_1ITy4O">
+												<div class="_1D5Acx">
+													<div class="_28Bfau">
+														<div class="dv-node-dp-action-box">
+															<div class="abwJ5F _16AW_S _2LF_6p">
+															<div class="abwJ5F _16AW_S _2LF_6p _1ITy4O HaWow5">
+																<div class="rating">
+																	<span id="star1_170125" class="star on"></span><span id="star2_170125" class="star on"></span><span id="star3_170125" class="star on"></span><span id="star4_170125" class="star zero"></span><span id="star5_170125" class="star"></span>
+																</div>
+															</div>
+															</div>
+															<div class="s"></div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div style="font-weight: bold; color: white; margin-top: 0px;" class="dv-dp-node-bottom _2T-E4t">
+										<div data-automation-id="bottom-bar-actions" data-testid="bottom-bar-actions" class="_2QEJQM _16AW_S _2LF_6p _8n5jYM">
+											<div class="_2hn8r7">
+												<div data-id="<%= movie.id %>" class="divine">
+													<svg class="_22qEau" viewBox="0 0 24 24" height="24" width="24" role="img" style="height:24px;width:24px" aria-hidden="true">
+														<title>Share</title>
+														<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+															<title>Share</title>
+															<path d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-3-4l-7-3m7-7l-7 3" stroke="currentColor" stroke-width="2" fill="none"></path>
+														</svg>
+													</svg>
+													<button style="position: absolute;">
+														<span>Copiar Url</span>
+													</button>
+												</div>
+												<!-- Share buttons --> 
+												<div class="addthis_inline_share_toolbox"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
+					<% }); %>`, {results: [data]});
+
+			let target = $('#ejs-t-movie')
+
+			target.html(html);
+
+			let script = document.createElement('script')
+
+			script.setAttribute('src', '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c552a260abc3d3')
+
+			document.head.appendChild(script)
+
+			$('h1.redirect', target).on('click', function(e){
+				let $el = $(this);
+
+				let url = location.href.split('movie.html')[0].split('#')[0];
+				url += 'movie.html#' + $el.data('id');
+
+                if(e.ctrlKey)
+                    return window.open(url, '_blank').focus();
+                
+				location.href = url;
+			})
+
+			$('.divine', target).on('click', function(){
+				let $el = $(this);
+
+				let url = location.href.split('index.html')[0].split('#')[0];
+				url += 'movie.html#' + $el.data('id');
+
+				$('#copy').val(url);
+
+				document.querySelector("#copy").select();
+      			document.execCommand('copy');
+			})
+
+			var swiper = new Swiper('.movie-info.swiper-container', {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true
+				},
+				mousewheel: false,
+				keyboard: true,
+			});
+		})
+	</script>
+
+    <style>
+        div.pm-nav-search, div.pm-nav-search label {
+            pointer-events: all !important;
+            cursor: pointer;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            display: none !important;
+        }
+    </style>
+
+    <style>
+        input#copy {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        h1.redirect {
+            cursor: pointer;
+        }
+
+        .divine {
+            min-width: 114px;
+            background: #818181;
+            padding-top: 10px;
+            padding-bottom: 3px;
+            display: block;
+            position: relative;
+            top: -2px;
+            margin-right: 3px;
+            padding-left: 6px;
+            cursor: pointer;
+        }
+
+        .divine button {
+            position: absolute;
+            font-size: 13px;
+        }
+    </style>
+
+	<footer id="pv-footer" class="pv-footer">
+		<div class="pv-brand-logo"></div>
+		<ul>
+			<li>
+				<a class="_1NNx6V">Termos e aviso de privacidade</a>
+			</li>
+			<li>
+				<a class="_1NNx6V">Enviar feedback</a>
+			</li>
+			<li>
+				<a class="_1NNx6V">Ajuda</a>
+			</li>
+			<li>© 2021, Trabalho escolar de DIAW - PUC Minas</li>
+		</ul>
+	</footer>
+</body>
+
+</html>

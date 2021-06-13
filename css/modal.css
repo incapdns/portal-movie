@@ -1,0 +1,37 @@
+.modal-dialog {
+	max-width: 800px;
+	margin: 30px auto;
+}
+
+.modal-content {
+	background-color: transparent;
+}
+
+.modal-body {
+	position:relative;
+	padding:0px;
+}
+.close {
+	position:absolute;
+	right:-30px;
+	top:0;
+	z-index:999;
+	font-size:2rem;
+	font-weight: normal;
+	color:#fff;
+	opacity:1;
+}
+
+button.close {
+	display: block;
+	position: relative;
+	left: 0px;
+	background: #131313;
+}
+
+button.close span:first-child {
+	font-size: 17px;
+	bottom: 5px;
+	position: relative;
+	left: 7px;
+}
