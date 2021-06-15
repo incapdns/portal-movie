@@ -94,7 +94,7 @@
         </script>
         <script src="js/lib/jquery.min.js"></script>
         <script src="js/lib/axios.min.js"></script>
-        <script src="js/lib/jsonp.js"></script>
+        <script src="js/lib/jsonp.min.js"></script>
         <script src="js/lib/ejs.min.js"></script>
         <script src="js/lib/nav.js"></script>
         <link rel="stylesheet" href="css/nav.css"/>
@@ -118,6 +118,8 @@
         <link rel="stylesheet" href="css/spotlight.css"/>
         <link rel="stylesheet" href="css/news.css"/>
         <link rel="stylesheet" href="css/footer.css"/>
+
+        <script> var key = '483ad82b6b8026a6659a76eb8044f029'; </script>
     </head>
     <body>
         <!-- Modal -->
@@ -272,16 +274,16 @@
 			tvs: {}
 		};
 
-		$.get('https://api.themoviedb.org/3/genre/movie/list?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data=>{
+		$.get('https://api.themoviedb.org/3/genre/movie/list?api_key='+key+'&language=pt-BR', data=>{
 			data.genres.forEach(genre=>genres.movies[genre.id] = genre.name)
 		});
 
-		$.get('https://api.themoviedb.org/3/genre/tv/list?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data=>{
+		$.get('https://api.themoviedb.org/3/genre/tv/list?api_key='+key+'&language=pt-BR', data=>{
 			data.genres.forEach(genre=>genres.tvs[genre.id] = genre.name)
 		});
 
 		$( document ).ready(setTimeout(() => {
-            $.get('https://api.themoviedb.org/3/movie/upcoming?api_key=483ad82b6b8026a6659a76eb8044f029&language=pt-BR', data=>{
+            $.get('https://api.themoviedb.org/3/movie/upcoming?api_key='+key+'&language=pt-BR', data=>{
                 let html = ejs.render(`
 					<% results.slice(0, 5).forEach(function(movie){ %>
 						<div class="swiper-slide">
