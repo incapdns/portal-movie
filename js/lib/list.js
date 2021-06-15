@@ -8,7 +8,7 @@ var videoBtn = function() {
 	$("#video").attr('src', videoSrc);
 }
 
-let key = '483ad82b6b8026a6659a76eb8044f029';
+var key = '483ad82b6b8026a6659a76eb8044f029';
 
 var titleBtn = function() {
 	let id = $(this).data("id")
