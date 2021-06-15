@@ -100,9 +100,7 @@ class TImdbApi {
 		
 		this.latest = value
 		
-		let url = 'https://v2.sg.media-imdb.com/suggests/'+value[0]+'/'+value+'.json'
-		
-		$jsonp.send(url, {
+		$jsonp.send({
 			callbackName: value,
 			callback: this.callback.bind(this),
 		})
