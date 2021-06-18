@@ -84,10 +84,6 @@ class TImdbApi {
 		})
 				
 		this.item.html(html)
-		
-		$('.title-btn', this.item).click(titleBtn);
-
-		$('.video-btn', this.item).click(videoBtn);
 	}
 
 	constructor(item){
@@ -106,6 +102,10 @@ class TImdbApi {
 		})
 	}
 }
+
+$(document).on('click', '.title-btn', titleBtn);
+
+$(document).on('click', '.video-btn', videoBtn);
 
 function validateFn(result){
 	let term = this.val().trim()
