@@ -34,53 +34,56 @@ class TImdbApi {
 		let html = ''
 		
 		data.d.forEach(data => {
-			//O resultado junto do redirecionamento é provido pela TheMovieDBAPI, sendo que video é linkado no m.imdb !
+			let id = data.id;
+			if(id[0] !== '/'){
+				//O resultado junto do redirecionamento é provido pela TheMovieDBAPI, sendo que video é linkado no m.imdb !
 
-			html += '<ul role="listbox" class="suggestions-list">'
-			
-			let movie = Data.movie
-									
-			let image = data.i && data.i.length ? data.i[0] : 'images/no-poster.png'
-						
-			let year = data.y || ''
-			
-			let title = data.l, description = data.s || ''
-			
-			let itens = {title, year, description, image, href: '#', id: data.id}
-			
-			Data.itens.movie.forEach(item => {
-				movie = movie.replace('{'+item+'}', itens[item])
-			})
-			
-			html += movie
-			
-			let videos = data.v || []
-			
-			if(videos.length)
-				html += '<li role="option" class="suggestion">'
-			
-			videos.forEach(data => {
-				let video = Data.video
+				html += '<ul role="listbox" class="suggestions-list">'
 				
-				let title = data.l, time = data.s || ''
-				
+				let movie = Data.movie
+										
 				let image = data.i && data.i.length ? data.i[0] : 'images/no-poster.png'
-								
-				let itens = {title, time, image, href: '#'}
+							
+				let year = data.y || ''
 				
-				itens.src = 'https://m.imdb.com/video/imdb/'+data.id+'/imdb/embed'
+				let title = data.l, description = data.s || ''
 				
-				Data.itens.video.forEach(item => {
-					video = video.replace('{'+item+'}', itens[item])
+				let itens = {title, year, description, image, href: '#', id}
+				
+				Data.itens.movie.forEach(item => {
+					movie = movie.replace('{'+item+'}', itens[item])
 				})
-								
-				html += video
-			})
-			
-			if(videos.length)
-				html += '</li>'
-			
-			html += '</ul>'
+				
+				html += movie
+				
+				let videos = data.v || []
+				
+				if(videos.length)
+					html += '<li role="option" class="suggestion">'
+				
+				videos.forEach(data => {
+					let video = Data.video
+					
+					let title = data.l, time = data.s || ''
+					
+					let image = data.i && data.i.length ? data.i[0] : 'images/no-poster.png'
+									
+					let itens = {title, time, image, href: '#'}
+					
+					itens.src = 'https://m.imdb.com/video/imdb/'+data.id+'/imdb/embed'
+					
+					Data.itens.video.forEach(item => {
+						video = video.replace('{'+item+'}', itens[item])
+					})
+									
+					html += video
+				})
+				
+				if(videos.length)
+					html += '</li>'
+				
+				html += '</ul>'
+			}
 		})
 				
 		this.item.html(html)
